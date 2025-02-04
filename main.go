@@ -15,7 +15,7 @@ func main() {
 
 	// to get server is up
 	app.Get("/shop/ping", func(ctx iris.Context) {
-		ctx.WriteString("pong")
+		helper.ServerUp(ctx)
 	})
 
 	// api to get all partner
