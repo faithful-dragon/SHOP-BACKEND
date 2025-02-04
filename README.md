@@ -1,3 +1,3 @@
 # SHOP-BACKEND
 
-<img width="601" alt="Screenshot 2025-02-04 at 8 17 42 PM" src="https://github.com/user-attachments/assets/bc49c25a-8c3f-49f4-98eb-e7120d8ba53d" />
+<img width="1080" alt="Screenshot 2025-02-04 at 11 25 41 PM" src="https://github.com/user-attachments/assets/1c9e9145-5b8b-46ec-9811-e9c3133d883d" />
