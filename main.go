@@ -1,7 +1,7 @@
 package main
 
 import (
-	controller "SHOP-BACKEND/Controller"
+	controller "SHOP-BACKEND/CONTROLLER"
 	helper "SHOP-BACKEND/HELPER"
 
 	"github.com/kataras/iris/v12"
@@ -15,7 +15,19 @@ func main() {
 
 	// to get server is up
 	app.Get("/shop/ping", func(ctx iris.Context) {
-		ctx.WriteString("pong")
+		helper.ServerUp(ctx)
+	})
+
+	// api to add new shop owner
+	app.Post("shop/addShowOwner", func(ctx iris.Context) {
+		helper.SetApiName("ADD_SHOP_OWNER", ctx)
+		controller.AddShopOwner(ctx)
+	})
+
+	// api to get unique partner
+	app.Get("/shop/uniquePartner", func(ctx iris.Context) {
+		helper.SetApiName("GET_UNIQUE_PARTNER", ctx)
+		controller.GetUniquePartner(ctx)
 	})
 
 	// api to get all partner

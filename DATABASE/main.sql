@@ -5,6 +5,17 @@ begin;
 CREATE SCHEMA shop;
 
 -- create table
+CREATE TABLE shop.shop_owner (
+    id serial4 PRIMARY KEY,
+    shop_name varchar(255) NOT NULL,
+    owner_name varchar(255) NOT NULL,
+    reg_date date NULL,
+    ph_no varchar(10) NULL,
+    address text NULL
+    is_active is_active NOT NULL,
+    remarks text NULL,
+);
+
 CREATE TABLE shop.partner (
     id SERIAL PRIMARY KEY,
     full_name VARCHAR(255) NOT NULL,
@@ -12,7 +23,7 @@ CREATE TABLE shop.partner (
     reg_date DATE,
     ph_no VARCHAR(10),
     address VARCHAR(255),
-    is_active BOOLEAN DEFAULT TRUE,
+    is_active is_active NOT NULL,
 
     UNIQUE (ph_no, full_name)
 );
@@ -56,12 +67,12 @@ CREATE TABLE shop.transaction (
 CREATE TABLE shop.stock (
     id SERIAL PRIMARY KEY,
     partner_id INTEGER NOT NULL,
-    type stock_type NOT NULL,  -- Use the enum type or VARCHAR if it's free-form
-    item_name VARCHAR(255) NOT NULL, -- Item name should not be null
-    weight FLOAT, -- weight should be a number. NUMERIC for precision.
+    type stock_type NOT NULL,
+    item_name VARCHAR(255) NOT NULL,
+    weight FLOAT,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 
-    FOREIGN KEY (partner_id) REFERENCES shop.partner(id) -- Make sure the partner table exists!
+    FOREIGN KEY (partner_id) REFERENCES shop.partner(id)
 );
 
 -- data type

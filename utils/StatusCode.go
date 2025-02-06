@@ -1,6 +1,6 @@
 package utils
 
-type codes struct {
+type Codes struct {
 	StatusCode  int
 	Message     string
 	Description string
@@ -14,12 +14,13 @@ const (
 	StatusInternalServerError = 500
 )
 
-var codeMap map[string]codes
+var CodeMap map[string]Codes
 
 func SetCodeMap() {
-	codeMap = make(map[string]codes)
-	codeMap["4001"] = codes{StatusBadRequest, "4001", "Bad Request"}
-	codeMap["4002"] = codes{StatusNotFound, "4002", "Not Found"}
-	codeMap["4003"] = codes{StatusRequestTimeout, "4003", "Request Timeout"}
-	codeMap["4004"] = codes{StatusInternalServerError, "4004", "Internal Server Error"}
+	CodeMap = make(map[string]Codes)
+	CodeMap["200001"] = Codes{200001, "Valid Request", "Valid Request"}
+	CodeMap["400001"] = Codes{400001, "Invalid headers", "Invalid headers"}
+	CodeMap["404001"] = Codes{404001, "4002", "Not Found"}
+	CodeMap["408001"] = Codes{408001, "4003", "Request Timeout"}
+	CodeMap["500001"] = Codes{500001, "4004", "Internal Server Error"}
 }
