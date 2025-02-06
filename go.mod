@@ -2,7 +2,10 @@ module SHOP-BACKEND
 
 go 1.22.5
 
-require github.com/kataras/iris/v12 v12.2.11
+require (
+	github.com/kataras/iris/v12 v12.2.11
+	github.com/lib/pq v1.10.9
+)
 
 require (
 	github.com/BurntSushi/toml v1.3.2 // indirect
